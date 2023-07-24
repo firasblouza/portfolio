@@ -1,16 +1,17 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaReact,
   FaHtml5,
   FaJs,
   FaCss3Alt,
   FaPhp,
-  FaWordpress
+  FaWordpress,
+  FaNodeJs,
+  FaDatabase
 } from "react-icons/fa";
 
 const ProgressBar = ({ startAnimation, skill, score }) => {
-  // A ProgressBar component that displays a skill and it's score
+  // A ProgressBar component that displays a skill and its score
   // DashOffset is calculated based on the skill score
   // progressNumber state is used to animate the skill score from 0 to the ending value.
   const dashOffset = 472 - (472 * score) / 100;
@@ -51,6 +52,14 @@ const ProgressBar = ({ startAnimation, skill, score }) => {
         return <FaPhp />;
       case "wp":
         return <FaWordpress />;
+      case "nodejs":
+        return <FaNodeJs />;
+      case "expressjs":
+        return <FaNodeJs />;
+      case "mongodb":
+        return <FaDatabase />;
+      case "mysql":
+        return <FaDatabase />;
       default:
         return null;
     }
@@ -59,8 +68,8 @@ const ProgressBar = ({ startAnimation, skill, score }) => {
   // The ProgressBar component
   return (
     <div className="skill w-40 h-40 relative">
-      <div className="outer h-40 w-40 p-[20px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(255,255,255,0.7)]">
-        <div className="inner flex flex-col items-center justify-center h-[120px] w-[120px] rounded-full shadow-innerCircleLight dark:shadow-innerCircleLight">
+      <div className="outer h-40 w-40 p-[20px] rounded-full shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(255,255,255,0.7)] dark:shadow-[6px_6px_10px_-1px_rgba(0,0,0,0.15),-6px_-6px_10px_-1px_rgba(0,0,0,0.7)]">
+        <div className="inner flex flex-col items-center justify-center h-[120px] w-[120px] rounded-full shadow-innerCircleLight dark:shadow-innerCircleDark">
           <div
             id="number"
             className="font-semibold text-[#555] dark:text-white">

@@ -10,11 +10,7 @@ module.exports = {
         innerCircleLight:
           " inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);",
         innerCircleDark:
-          "inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7), -0.5px -0.5px 0px rgba(255, 255, 255, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);"
-      },
-      gradientColors: {
-        light: ["from-white", "to-sky-200"],
-        dark: ["from-[#0F172A]", "to-sky-900"]
+          "inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2), inset -4px -4px 6px -1px rgba(0, 0, 0, 0.7), -0.5px -0.5px 0px rgba(0, 0, 0, 1), 0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 0px 12px 10px -10px rgba(0, 0, 0, 0.05);"
       },
 
       fontFamily: {
@@ -28,9 +24,19 @@ module.exports = {
           },
           "70%": { transform: " translateX(0) rotate(360deg)" },
           "85%": {
-            transform: " translateX(-20px) rotate(-10deg)"
+            transform: " translateX(-20px) rotate(-10deg) scale(1.2)"
           },
-          "100%": { transform: " translateX(0) rotate(0deg)" }
+          "100%": { transform: " translateX(0) rotate(0deg) scale(1)" }
+        },
+        "slide-out-and-rotate": {
+          "0%": {
+            transform: "translateX(0) rotate(0deg) scale(1)"
+          },
+          "70%": { transform: " translateX(0) rotate(-360deg) scale(1.2)" },
+          "85%": {
+            transform: " translateX(20px) rotate(10deg) scale(1)"
+          },
+          "100%": { transform: " translateX(1000px) rotate(0deg) scale(1)" }
         },
         "opacity-in": {
           "0%": { opacity: 0 },
@@ -38,7 +44,8 @@ module.exports = {
         },
         "slide-up": {
           "0%": { transform: "translateY(1000px)" },
-          "100%": { transform: "translateY(0)" }
+          "90%": { transform: "translateY(-20px) scaleY(1.2)" },
+          "100%": { transform: "translateY(0) scaleY(1)" }
         },
         "progress-bar": {
           "100%": { strokeDashoffset: "0" }
@@ -46,11 +53,12 @@ module.exports = {
       },
       animation: {
         "slide-and-rotate": "slide-and-rotate 2s ease-in-out forwards",
+        "slide-out-and-rotate": "slide-out-and-rotate 2s ease-in-out backwards",
         "opacity-in": "opacity-in 2s 2s ease-in-out forwards",
         "slide-up": "slide-up 2s ease-in-out forwards",
         "progress-bar": "progress-bar 2s linear 0.5s forwards"
       }
     }
   },
-  plugins: [require("tailwindcss-gradients")]
+  plugins: []
 };

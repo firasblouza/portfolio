@@ -11,7 +11,6 @@ function App() {
     if (startAnimation) setStartAnimation(false);
     const nextElement = document.getElementById("about");
     const profileImage = document.getElementById("ProfilePic");
-    const progressBar = document.querySelectorAll(".skillBar");
     const introBox = document.querySelector(".intro-container");
     if (nextElement) {
       profileImage.classList.remove("animate-slide-and-rotate");
@@ -19,10 +18,6 @@ function App() {
       introBox.classList.remove("animate-slide-up");
       setTimeout(() => {
         nextElement.scrollIntoView({ behavior: "smooth" });
-        progressBar.forEach((bar) => {
-          bar.classList.add("animate-progress-bar");
-        });
-        setStartAnimation(true);
         profileImage.classList.remove("animate-slide-out-and-rotate");
       }, 2000);
     }
@@ -35,6 +30,18 @@ function App() {
     }
   };
 
+  const experienceLetsConnect = () => {
+    const nextElement = document.getElementById("skills-section");
+    if (nextElement) {
+      const progressBar = document.querySelectorAll(".skillBar");
+      progressBar.forEach((bar) => {
+        bar.classList.add("animate-progress-bar");
+      });
+      setStartAnimation(true);
+      nextElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="App min-h-screen relative">
       <Hero heroLetsConnect={heroLetsConnect} />
@@ -42,7 +49,7 @@ function App() {
         startAnimation={startAnimation}
         aboutLetsConnect={aboutLetsConnect}
       />
-      <ProfessionalExperience />
+      <ProfessionalExperience experienceLetsConnect={experienceLetsConnect} />
       <Skills startAnimation={startAnimation} />
     </div>
   );

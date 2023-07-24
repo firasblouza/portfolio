@@ -7,7 +7,8 @@ import {
   FaPhp,
   FaWordpress,
   FaNodeJs,
-  FaDatabase
+  FaDatabase,
+  FaCss3
 } from "react-icons/fa";
 
 const ProgressBar = ({ startAnimation, skill, score }) => {
@@ -60,6 +61,8 @@ const ProgressBar = ({ startAnimation, skill, score }) => {
         return <FaDatabase />;
       case "mysql":
         return <FaDatabase />;
+      case "tailwindcss":
+        return <FaCss3 />;
       default:
         return null;
     }
@@ -77,7 +80,7 @@ const ProgressBar = ({ startAnimation, skill, score }) => {
           </div>
           <div className="flex items-center justify-center my-3">
             {getIconBySkill(skill)}
-            <h2 className="text-center ml-2 font-bold text-[#0F172A] dark:text-white">
+            <h2 className="text-center mx-1 text-[14px] sm:text-1xl font-bold text-[#0F172A] dark:text-white">
               {skill}
             </h2>
           </div>

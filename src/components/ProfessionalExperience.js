@@ -5,15 +5,15 @@ const ProfessionalExperience = () => {
   return (
     <section
       id="professional-experience"
-      className="flex flex-col justify-center items-center p-5 w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-900 text-[#0F172A] dark:text-white">
+      className="flex flex-col justify-center items-center p-5 w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
-      <div className="hero-bg absolute inset-0 w-full h-full bg-opacity-60 backdrop-blur-lg"></div>
+      <div className="professional-bg  inset-0 w-full h-full bg-opacity-70 backdrop-blur-lg"></div>
       <div className="flex flex-col gap-3 p-2 h-full w-full ">
-        <h3 className="text-center text-2xl sm:text-4xl md:text-5xl text-sky-500 font-sharetech font-bold">
+        <h3 className="text-center text-2xl sm:text-4xl md:text-5xl text-sky-500 font-sharetech font-bold z-10">
           Professional Experience
         </h3>
       </div>
-      <div className="flex flex-col gap-5 p-3 h-full w-full my-5">
+      <div className="flex flex-col gap-5 p-3 h-full w-full my-5 z-10">
         <div className="flex flex-col md:flex-row gap-5 w-full h-full">
           <ExperienceCard
             title={"Lead Web Developer - Vision Vortexes Greece"}

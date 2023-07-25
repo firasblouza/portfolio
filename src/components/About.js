@@ -9,6 +9,7 @@ const About = ({ startAnimation, aboutLetsConnect }) => {
       className="flex flex-col justify-center items-center pt-14 w-full min-h-screen overflow-hidden bg-gradient-to-br from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white px-5">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
       <div className="about-bg inset-0 w-full h-full bg-opacity-60 backdrop-blur-lg"></div>
+      {/* Made the about card in a seperate re usable component.*/}
       <AboutCard
         title={"An enthusiastic web developer"}
         name={"Firas Blouza"}

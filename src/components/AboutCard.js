@@ -10,11 +10,12 @@ const AboutCard = ({ title, name, text }) => {
           alt="About Me Laptop"
         />
         <span className="absolute flex justify-center items-center mx-auto inset-x-0 -bottom-8 lg:inset-x-auto lg:mx-0 lg:inset-y-0 lg:my-auto lg:-right-8 rounded-full bg-white w-36 h-36">
-          <img
+          {/* <img
             className="w-28 h-auto rounded-full z-10"
             src="img/profile.jpg"
             alt=""
-          />
+          /> */}
+          <span className="animate-pulse text-5xl">💻</span>
         </span>
       </div>
       <div className="about-info bg-white w-auto h-auto grid py-4 px-2 lg:pl-4 place-content-center justify-center justify-items-center lg:justify-items-start">

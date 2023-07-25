@@ -2,7 +2,9 @@ import About from "./components/About";
 import Hero from "./components/Hero";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Skills from "./components/Skills";
+import Contact from "./components/Contact";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [startAnimation, setStartAnimation] = useState(false);
@@ -42,6 +44,12 @@ function App() {
     }
   };
 
+  const skillsLetsConnect = () => {
+    const nextElement = document.getElementById("contact");
+    if (nextElement) {
+      nextElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="App min-h-screen relative">
       <Hero heroLetsConnect={heroLetsConnect} />
@@ -50,7 +58,12 @@ function App() {
         aboutLetsConnect={aboutLetsConnect}
       />
       <ProfessionalExperience experienceLetsConnect={experienceLetsConnect} />
-      <Skills startAnimation={startAnimation} />
+      <Skills
+        startAnimation={startAnimation}
+        skillsLetsConnect={skillsLetsConnect}
+      />
+      <Contact />
+      <Footer />
     </div>
   );
 }

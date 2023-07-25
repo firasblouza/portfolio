@@ -5,11 +5,12 @@ const Footer = () => {
   const thisYear = date.getFullYear();
   return (
     <footer className="absolute w-full h:36 md:h-28 bg-gradient-to-br from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 border-t-2 dark:border-white border-[#0F172A] dark:text-white z-10 p-8">
-      <div className="flex flex-col gap-5 justify-center items-center md:justify-between md:items-center md:flex-row w-full h-full">
-        <h3 className="text-2xl text-[#333] dark:text-white">
+      <div className="footer-blur absolute inset-0 w-full h-full bg-opacity-60 backdrop-blur-lg"></div>
+      <div className="flex flex-col gap-5 justify-center items-center md:justify-between md:items-center md:flex-row w-full h-full z-10">
+        <h3 className="text-2xl text-[#333] dark:text-white z-10">
           &copy; {thisYear} - All Rights Reserved
         </h3>
-        <div className="flex gap-5">
+        <div className="flex gap-5 z-10">
           <a
             href="https://www.github.com/firasblouza"
             target="_blank"

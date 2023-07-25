@@ -3,12 +3,13 @@ import Hero from "./components/Hero";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
+import { FaArrowUp } from "react-icons/fa";
 
 function App() {
   const [startAnimation, setStartAnimation] = useState(false);
-
+  const [showGoToTop, setShowGoToTop] = useState(false);
   const heroLetsConnect = () => {
     if (startAnimation) setStartAnimation(false);
     const nextElement = document.getElementById("about");
@@ -50,6 +51,29 @@ function App() {
       nextElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroSection = document.getElementById("hero");
+
+      const showThreshold = heroSection.offsetTop + heroSection.offsetHeight;
+
+      setShowGoToTop(window.scrollY >= showThreshold);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const goToTop = () => {
+    const nextElement = document.getElementById("hero");
+    if (nextElement) {
+      nextElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="App min-h-screen relative">
       <Hero heroLetsConnect={heroLetsConnect} />
@@ -64,6 +88,14 @@ function App() {
       />
       <Contact />
       <Footer />
+      {showGoToTop && (
+        <div className="back-to-top fixed bottom-8 flex justify-center items-center right-5 rounded-full h-24 w-24 z-10 animate-bounce">
+          <FaArrowUp
+            className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
+            onClick={goToTop}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -11,7 +11,7 @@ import {
   FaCss3
 } from "react-icons/fa";
 
-const ProgressBar = ({ startAnimation, skill, score }) => {
+const ProgressBar = ({ startAnimation, skill, score, progressBarRef }) => {
   // A ProgressBar component that displays a skill and its score
   // DashOffset is calculated based on the skill score
   // progressNumber state is used to animate the skill score from 0 to the ending value.
@@ -88,6 +88,7 @@ const ProgressBar = ({ startAnimation, skill, score }) => {
       </div>
       <svg
         className="skillBar absolute top-0 left-0"
+        ref={progressBarRef}
         width="160px"
         height="160px">
         <defs>

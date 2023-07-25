@@ -7,7 +7,6 @@ const Hero = ({ heroLetsConnect }) => {
       id="hero"
       className="flex flex-col justify-center items-center w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
-      <div className="hero-bg inset-0 w-full h-full bg-opacity-60 backdrop-blur-lg"></div>
       {/* Wrapped the image in a relative container that is in the middle screen to control it's position */}
       <div className="hero-profile w-2/3 h-64 relative">
         <img

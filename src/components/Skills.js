@@ -9,7 +9,6 @@ const Skills = ({ startAnimation, skillsLetsConnect }) => {
       id="skills-section"
       className="flex flex-col justify-center items-center gap-4 p-5 w-full min-h-screen overflow-hidden bg-gradient-to-br from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
-      <div className="hero-bg absolute inset-0 w-full h-full bg-opacity-60 backdrop-blur-lg"></div>
       <div className="flex flex-col gap-3 p-2 h-full w-full z-10">
         <h3 className="text-center text-2xl sm:text-4xl md:text-5xl text-sky-500 font-sharetech font-bold">
           Skills

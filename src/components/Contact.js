@@ -6,7 +6,6 @@ const Contact = () => {
       id="contact"
       className="flex flex-col justify-center items-center w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
-      <div className="contact-bg inset-0 w-full h-full max-h-screen bg-opacity-60 backdrop-blur-lg"></div>
       <h3 className="text-center text-2xl mb-20 sm:text-4xl md:text-5xl text-sky-500 font-sharetech font-bold z-10">
         Get in touch
       </h3>

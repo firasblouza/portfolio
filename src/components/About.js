@@ -17,7 +17,7 @@ const About = ({ startAnimation, aboutLetsConnect }) => {
           "an enthusiastic and driven web developer. I thrive on continuous learning, always seeking new opportunities to grow and improve. I'm ambitious, quick learner, communicative and fun to work with !"
         }
       />
-      <div className="w-2/3 z-10 flex flex-col-reverse gap-3 justify-center items-center mt-6 sm:mt-10 animate-bounce">
+      <div className="w-2/3 z-10 flex flex-col-reverse gap-3 justify-center items-center mt-6 sm:mt-10 ">
         <FaArrowDown
           className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
           onClick={aboutLetsConnect}

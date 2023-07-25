@@ -89,7 +89,7 @@ function App() {
       <Contact />
       <Footer />
       {showGoToTop && (
-        <div className="back-to-top fixed bottom-8 flex justify-center items-center right-5 rounded-full h-24 w-24 z-10 animate-bounce">
+        <div className="back-to-top fixed bottom-8 flex justify-center items-center right-5 rounded-full h-24 w-24 z-10 animate-pulse">
           <FaArrowUp
             className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
             onClick={goToTop}

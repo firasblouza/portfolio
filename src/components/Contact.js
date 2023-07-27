@@ -1,9 +1,10 @@
 import React from "react";
 
-const Contact = () => {
+const Contact = ({ contactRef }) => {
   return (
     <section
       id="contact"
+      ref={contactRef}
       className="flex flex-col justify-center items-center w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
       <h3 className="text-center text-2xl mb-20 sm:text-4xl md:text-5xl text-sky-500 font-sharetech font-bold z-10">

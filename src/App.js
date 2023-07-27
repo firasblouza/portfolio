@@ -3,91 +3,153 @@ import Hero from "./components/Hero";
 import ProfessionalExperience from "./components/ProfessionalExperience";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Footer from "./components/Footer";
 import { FaArrowUp } from "react-icons/fa";
 
 function App() {
   const [startAnimation, setStartAnimation] = useState(false);
   const [showGoToTop, setShowGoToTop] = useState(false);
+  const [nextSection, setNextSection] = useState("");
 
-  const heroLetsConnect = () => {
-    if (startAnimation) setStartAnimation(false);
-    const nextElement = document.getElementById("about");
-    const profileImage = document.getElementById("ProfilePic");
-    const introBox = document.querySelector(".intro-container");
-    if (nextElement) {
-      profileImage.classList.remove("animate-slide-and-rotate");
-      profileImage.classList.add("animate-slide-out-and-rotate");
-      introBox.classList.remove("animate-slide-up");
-      setTimeout(() => {
-        nextElement.scrollIntoView({ behavior: "smooth" });
-        profileImage.classList.remove("animate-slide-out-and-rotate");
-      }, 2000);
-    }
-  };
+  // Section Refs
+  const heroRef = useRef();
+  const aboutRef = useRef();
+  const experienceRef = useRef();
+  const skillsRef = useRef();
+  const contactRef = useRef();
 
-  const aboutLetsConnect = () => {
-    const nextElement = document.getElementById("professional-experience");
-    if (nextElement) {
-      nextElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // Refs for the Hero Section
+  const profileImageRef = useRef();
+  const progressBarRefs = useRef([]);
+  const introBoxRef = useRef();
 
-  const experienceLetsConnect = () => {
-    const nextElement = document.getElementById("skills-section");
-    if (nextElement) {
-      const progressBar = document.querySelectorAll(".skillBar");
-      progressBar.forEach((bar) => {
-        bar.classList.add("animate-progress-bar");
-      });
-      setStartAnimation(true);
-      nextElement.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // Function to handle the Go To Next Section button
+  const handleClick = () => {
+    switch (nextSection) {
+      case "about":
+        if (startAnimation) setStartAnimation(false);
+        const profileImage = profileImageRef.current;
+        const introBox = introBoxRef.current;
+        profileImage.classList.toggle("animate-slide-and-rotate");
+        profileImage.classList.toggle("animate-slide-out-and-rotate");
+        introBox.classList.toggle("animate-slide-up");
+        setTimeout(() => {
+          aboutRef.current.scrollIntoView({ behavior: "smooth" });
+          profileImage.classList.toggle("animate-slide-out-and-rotate");
+        }, 2000);
+        break;
 
-  const skillsLetsConnect = () => {
-    const nextElement = document.getElementById("contact");
-    if (nextElement) {
-      nextElement.scrollIntoView({ behavior: "smooth" });
+      case "professional-experience":
+        experienceRef.current.scrollIntoView({ behavior: "smooth" });
+        break;
+
+      case "skills-section":
+        progressBarRefs.current.forEach((bar) => {
+          bar.current.classList.add("animate-progress-bar");
+        });
+        setStartAnimation(true);
+        skillsRef.current.scrollIntoView({ behavior: "smooth" });
+        break;
+
+      case "contact":
+        contactRef.current.scrollIntoView({ behavior: "smooth" });
+        break;
+
+      default:
+        return null;
     }
   };
 
   useEffect(() => {
+    handleClick();
+  }, [nextSection]);
+
+  // const heroLetsConnect = () => {
+  //   if (startAnimation) setStartAnimation(false);
+  //   const nextElement = document.getElementById("about");
+
+  //   if (nextElement) {
+  //     const profileImage = profileImageRef.current;
+  //     const introBox = introBoxRef.current;
+  //     profileImage.classList.toggle("animate-slide-and-rotate");
+  //     profileImage.classList.toggle("animate-slide-out-and-rotate");
+  //     introBox.classList.toggle("animate-slide-up");
+  //     setTimeout(() => {
+  //       nextElement.scrollIntoView({ behavior: "smooth" });
+  //       profileImage.classList.toggle("animate-slide-out-and-rotate");
+  //     }, 2000);
+  //   }
+  // };
+
+  // const aboutLetsConnect = () => {
+  //   const nextElement = document.getElementById("professional-experience");
+  //   if (nextElement) {
+  //     nextElement.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+  // const experienceLetsConnect = () => {
+  //   const nextElement = document.getElementById("skills-section");
+  //   if (nextElement) {
+  //   }
+  // };
+
+  // const skillsLetsConnect = () => {
+  //   const nextElement = document.getElementById("contact");
+  //   if (nextElement) {
+  //     nextElement.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+  // Check whether the user is on the Hero section to control Go To Top button display
+  useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById("hero");
-
       const showThreshold = heroSection.offsetTop + heroSection.offsetHeight;
-
       setShowGoToTop(window.scrollY >= showThreshold);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  // Go To Top button function
+
   const goToTop = () => {
-    const nextElement = document.getElementById("hero");
-    if (nextElement) {
-      nextElement.scrollIntoView({ behavior: "smooth" });
-    }
+    heroRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <div className="App min-h-screen relative">
-      <Hero heroLetsConnect={heroLetsConnect} />
+      <Hero
+        handleClick={handleClick}
+        profileImageRef={profileImageRef}
+        introBoxRef={introBoxRef}
+        setNextSection={setNextSection}
+        heroRef={heroRef}
+      />
       <About
         startAnimation={startAnimation}
-        aboutLetsConnect={aboutLetsConnect}
+        handleClick={handleClick}
+        setNextSection={setNextSection}
+        aboutRef={aboutRef}
       />
-      <ProfessionalExperience experienceLetsConnect={experienceLetsConnect} />
+      <ProfessionalExperience
+        handleClick={handleClick}
+        setNextSection={setNextSection}
+        experienceRef={experienceRef}
+      />
       <Skills
         startAnimation={startAnimation}
-        skillsLetsConnect={skillsLetsConnect}
+        handleClick={handleClick}
+        progressBarRefs={progressBarRefs}
+        setNextSection={setNextSection}
+        skillsRef={skillsRef}
       />
-      <Contact />
+      <Contact contactRef={contactRef} />
       <Footer />
       {showGoToTop && (
         <div className="back-to-top fixed bottom-8 flex justify-center items-center right-5 rounded-full h-24 w-24 z-10 animate-pulse">

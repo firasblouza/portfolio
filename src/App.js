@@ -105,7 +105,8 @@ function App() {
   // Check whether the user is on the Hero section to control Go To Top button display
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.getElementById("hero");
+      const heroSection = heroRef.current;
+      const skillsSection = skillsRef.current;
       const showThreshold = heroSection.offsetTop + heroSection.offsetHeight;
       setShowGoToTop(window.scrollY >= showThreshold);
     };

@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import ProgressBar from "./ProgressBar";
 import { FaArrowDown } from "react-icons/fa";
 

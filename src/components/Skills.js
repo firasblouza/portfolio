@@ -5,7 +5,6 @@ const Skills = ({
   startAnimation,
   handleClick,
   progressBarRefs,
-  setNextSection,
   skillsRef
 }) => {
   const frontendSkills = [
@@ -48,7 +47,9 @@ const Skills = ({
                   skill={skill.name}
                   score={skill.score}
                   startAnimation={startAnimation}
-                  ref={(ref) => (progressBarRefs.current[index] = ref)}
+                  progressBarRef={(ref) =>
+                    (progressBarRefs.current[index] = ref)
+                  }
                 />
               ))}
             </div>
@@ -64,7 +65,9 @@ const Skills = ({
                   skill={skill.name}
                   score={skill.score}
                   startAnimation={startAnimation}
-                  ref={(ref) => (progressBarRefs.current[index] = ref)}
+                  progressBarRef={(ref) =>
+                    (progressBarRefs.current[index] = ref)
+                  }
                 />
               ))}
             </div>
@@ -74,7 +77,7 @@ const Skills = ({
       <div className="w-2/3 z-10 flex flex-col-reverse gap-3 justify-center items-center mt-6 sm:mt-10 ">
         <FaArrowDown
           className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
-          onClick={() => setNextSection("contact")}
+          onClick={() => handleClick("skills")}
         />
         <h3 className="intro-sub-text text-[#0F172A] mt-5 dark:text-white text-center text-1xl sm:text-2xl font-sharetech after:content-['👀']">
           Let's get in touch !

@@ -1,15 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {
-  FaReact,
-  FaHtml5,
-  FaJs,
-  FaCss3Alt,
-  FaPhp,
-  FaWordpress,
-  FaNodeJs,
-  FaDatabase,
-  FaCss3
-} from "react-icons/fa";
 
 const ProgressBar = ({ startAnimation, skill, score, progressBarRef }) => {
   // A ProgressBar component that displays a skill and its score
@@ -42,27 +31,72 @@ const ProgressBar = ({ startAnimation, skill, score, progressBarRef }) => {
   const getIconBySkill = (skill) => {
     switch (skill.toLowerCase()) {
       case "html":
-        return <FaHtml5 />;
+        return (
+          <img width="25" height="25" src="img/icons/html5.svg" alt="HTML5" />
+        );
       case "css":
-        return <FaCss3Alt />;
+        return (
+          <img width="25" height="25" src="img/icons/css3.svg" alt="CSS3" />
+        );
       case "javascript":
-        return <FaJs />;
+        return (
+          <img
+            width="25"
+            height="25"
+            src="img/icons/javascript.svg"
+            alt="JavaScript"
+          />
+        );
       case "reactjs":
-        return <FaReact />;
+        return (
+          <img width="25" height="25" src="img/icons/react.svg" alt="ReactJS" />
+        );
       case "php":
-        return <FaPhp />;
+        return <img width="25" height="25" src="img/icons/php.svg" alt="PHP" />;
       case "wp":
-        return <FaWordpress />;
+        return (
+          <img
+            width="25"
+            height="25"
+            src="img/icons/wordpress.svg"
+            alt="WordPress"
+          />
+        );
       case "nodejs":
-        return <FaNodeJs />;
+        return (
+          <img width="25" height="25" src="img/icons/nodejs.png" alt="NodeJS" />
+        );
       case "expressjs":
-        return <FaNodeJs />;
+        return (
+          <img
+            width="25"
+            height="25"
+            src="img/icons/expressjs.png"
+            alt="ExpressJS"
+          />
+        );
       case "mongodb":
-        return <FaDatabase />;
+        return (
+          <img
+            width="25"
+            height="25"
+            src="img/icons/mongodb.png"
+            alt="MongoDB"
+          />
+        );
       case "mysql":
-        return <FaDatabase />;
+        return (
+          <img width="25" height="25" src="img/icons/mysql.svg" alt="MySQL" />
+        );
       case "tailwindcss":
-        return <FaCss3 />;
+        return (
+          <img
+            width="25"
+            height="25"
+            src="img/icons/tailwindcss.svg"
+            alt="TailwindCSS"
+          />
+        );
       default:
         return null;
     }

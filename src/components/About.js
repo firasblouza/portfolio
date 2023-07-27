@@ -1,7 +1,7 @@
 import AboutCard from "./AboutCard";
 import { FaArrowDown } from "react-icons/fa";
 
-const About = ({ startAnimation, handleClick, setNextSection, aboutRef }) => {
+const About = ({ startAnimation, handleClick, aboutRef }) => {
   // An About section that displays a small introduction alongside ProgressBar components to display Skills
   return (
     <section
@@ -20,7 +20,7 @@ const About = ({ startAnimation, handleClick, setNextSection, aboutRef }) => {
       <div className="w-2/3 z-10 flex flex-col-reverse gap-3 justify-center items-center mt-6 sm:mt-10 ">
         <FaArrowDown
           className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
-          onClick={() => setNextSection("professional-experience")}
+          onClick={() => handleClick("about")}
         />
         <h3 className="intro-sub-text text-[#0F172A] mt-5 dark:text-white text-center text-1xl sm:text-2xl font-sharetech after:content-['👀']">
           Still interested ? Let's explore more !

@@ -25,7 +25,6 @@ function App() {
   const introBoxRef = useRef();
 
   // Function to handle the Go To Next Section button
-
   const handleClick = () => {
     switch (nextSection) {
       case "about":
@@ -61,6 +60,10 @@ function App() {
         return null;
     }
   };
+
+  useEffect(() => {
+    handleClick();
+  }, [nextSection]);
 
   // const heroLetsConnect = () => {
   //   if (startAnimation) setStartAnimation(false);

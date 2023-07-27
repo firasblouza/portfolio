@@ -60,8 +60,6 @@ function App() {
     }
   };
 
-  // Control the behavior of the page when the currentSection changes
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;

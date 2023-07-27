@@ -2,10 +2,15 @@ import React from "react";
 import ExperienceCard from "./ExperienceCard";
 import { FaArrowDown } from "react-icons/fa";
 
-const ProfessionalExperience = ({ experienceLetsConnect }) => {
+const ProfessionalExperience = ({
+  handleClick,
+  setNextSection,
+  experienceRef
+}) => {
   return (
     <section
       id="professional-experience"
+      ref={experienceRef}
       className="flex flex-col justify-center items-center p-5 w-full min-h-screen overflow-hidden bg-gradient-to-tr from-white to-sky-200 dark:from-[#0F172A] dark:to-sky-700 text-[#0F172A] dark:text-white">
       {/* An overlay to blur the background, some sort of tempered glass effect. */}
       <div className="professional-bg  inset-0 w-full h-full bg-opacity-70 backdrop-blur-lg"></div>
@@ -51,7 +56,10 @@ const ProfessionalExperience = ({ experienceLetsConnect }) => {
       <div className="w-2/3 z-10 flex flex-col-reverse gap-3 justify-center items-center mt-6 sm:mt-10 ">
         <FaArrowDown
           className="p-2 text-4xl text-purple-500 dark:text-white md:text-5xl border-2 rounded-full sm:py-2 border-violet-500 dark:border-violet-950 cursor-pointer"
-          onClick={experienceLetsConnect}
+          onClick={() => {
+            setNextSection("skills-section");
+            handleClick();
+          }}
         />
         <h3 className="intro-sub-text text-[#0F172A] mt-5 dark:text-white text-center text-1xl sm:text-2xl font-sharetech after:content-['😋']">
           Let's keep going !

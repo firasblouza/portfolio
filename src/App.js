@@ -10,6 +10,7 @@ import { FaArrowUp } from "react-icons/fa";
 function App() {
   const [startAnimation, setStartAnimation] = useState(false);
   const [showGoToTop, setShowGoToTop] = useState(false);
+
   const heroLetsConnect = () => {
     if (startAnimation) setStartAnimation(false);
     const nextElement = document.getElementById("about");

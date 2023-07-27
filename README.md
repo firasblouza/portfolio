@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! I am a passionate Full Stack Web Devel
 
 ## Visit My Portfolio Website
 
-[Click here to visit my portfolio website](https://firasblouza.netlify.app/)
+[Click here to visit my portfolio website](firasblouza.me/portfolio)
 
 ## Skills
 

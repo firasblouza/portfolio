@@ -11,7 +11,7 @@ const Hero = ({ handleClick, profileImageRef, heroRef }) => {
       {/* Wrapped the image in a relative container that is in the middle screen to control it's position */}
       <div className="hero-profile w-2/3 h-64 relative">
         <img
-          src="img/profile.jpg"
+          src="./img/profile.jpg"
           alt="Firas"
           id="ProfilePic"
           ref={profileImageRef}

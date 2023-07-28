@@ -32,46 +32,58 @@ const ProgressBar = ({ startAnimation, skill, score, progressBarRef }) => {
     switch (skill.toLowerCase()) {
       case "html":
         return (
-          <img width="25" height="25" src="img/icons/html5.svg" alt="HTML5" />
+          <img width="25" height="25" src="./img/icons/html5.svg" alt="HTML5" />
         );
       case "css":
         return (
-          <img width="25" height="25" src="img/icons/css3.svg" alt="CSS3" />
+          <img width="25" height="25" src="./img/icons/css3.svg" alt="CSS3" />
         );
       case "javascript":
         return (
           <img
             width="25"
             height="25"
-            src="img/icons/javascript.svg"
+            src="./img/icons/javascript.svg"
             alt="JavaScript"
           />
         );
       case "reactjs":
         return (
-          <img width="25" height="25" src="img/icons/react.svg" alt="ReactJS" />
+          <img
+            width="25"
+            height="25"
+            src="./img/icons/react.svg"
+            alt="ReactJS"
+          />
         );
       case "php":
-        return <img width="25" height="25" src="img/icons/php.svg" alt="PHP" />;
+        return (
+          <img width="25" height="25" src="./img/icons/php.svg" alt="PHP" />
+        );
       case "wp":
         return (
           <img
             width="25"
             height="25"
-            src="img/icons/wordpress.svg"
+            src="./img/icons/wordpress.svg"
             alt="WordPress"
           />
         );
       case "nodejs":
         return (
-          <img width="25" height="25" src="img/icons/nodejs.png" alt="NodeJS" />
+          <img
+            width="25"
+            height="25"
+            src="./img/icons/nodejs.png"
+            alt="NodeJS"
+          />
         );
       case "expressjs":
         return (
           <img
             width="25"
             height="25"
-            src="img/icons/expressjs.png"
+            src="./img/icons/expressjs.png"
             alt="ExpressJS"
           />
         );
@@ -80,20 +92,20 @@ const ProgressBar = ({ startAnimation, skill, score, progressBarRef }) => {
           <img
             width="25"
             height="25"
-            src="img/icons/mongodb.png"
+            src="./img/icons/mongodb.png"
             alt="MongoDB"
           />
         );
       case "mysql":
         return (
-          <img width="25" height="25" src="img/icons/mysql.svg" alt="MySQL" />
+          <img width="25" height="25" src="./img/icons/mysql.svg" alt="MySQL" />
         );
       case "tailwindcss":
         return (
           <img
             width="25"
             height="25"
-            src="img/icons/tailwindcss.svg"
+            src="./img/icons/tailwindcss.svg"
             alt="TailwindCSS"
           />
         );

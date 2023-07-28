@@ -6,7 +6,7 @@ const AboutCard = ({ title, name, text }) => {
       <div className="about-img relative">
         <img
           className="w-auto min-w-full h-auto rounded-t-lg lg:rounded-l-lg min-w-content max-h-fit"
-          src="img/about-laptop.jpg"
+          src="./img/about-laptop.jpg"
           alt="About Me Laptop"
         />
         <span className="absolute flex justify-center items-center mx-auto inset-x-0 -bottom-8 lg:inset-x-auto lg:mx-0 lg:inset-y-0 lg:my-auto lg:-right-8 rounded-full bg-white w-24 h-24 md:w-36 md:h-36">

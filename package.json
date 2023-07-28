@@ -1,6 +1,7 @@
 {
   "name": "firas-portfolio",
   "version": "0.1.0",
+  "homepage": "http://firasblouza.me/",
   "private": true,
   "dependencies": {
     "gh-pages": "^5.0.0",

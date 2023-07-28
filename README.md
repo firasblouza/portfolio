@@ -13,7 +13,7 @@ Welcome to my personal portfolio website! I am a passionate Full Stack Web Devel
 Below are some of the key skills I possess:
 
 - HTML5, CSS3, JavaScript
-- ReactJS, Redux
+- ReactJS
 - Node.js, Express.js
 - MongoDB, MySQL
 - RESTful APIs
@@ -32,4 +32,4 @@ Connect with me on social media and let's stay in touch! You can also reach out 
 
 ## License
 
-This project is licensed under the [MIT License](https://your-portfolio-website-url.com/LICENSE).
+This project is licensed under the [MIT License](https://wikipedia.com/MIT_License).
